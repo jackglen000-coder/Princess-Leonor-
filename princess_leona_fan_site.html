@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PL • Princess Leona</title>
+<meta name="description" content="Connect with Princess Leona and choose how you'd like to get in touch.">
+<style>
+:root{--bg:#0b1020;--card:#151d35;--text:#f8fafc;--muted:#cbd5e1;--accent:#e9b949;--accent2:#f6d77a}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at top,#28345d 0,#0b1020 55%);color:var(--text);display:flex;justify-content:center;padding:24px}
+.wrap{width:100%;max-width:560px;margin:auto}
+.brand{text-align:center;margin-bottom:20px}
+.logo{width:76px;height:76px;border-radius:50%;margin:auto;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#111827;font-weight:900;font-size:26px;box-shadow:0 10px 35px #0008}
+h1{font-size:30px;margin:15px 0 5px}
+.subtitle{color:var(--muted);margin:0}
+.card{background:#ffffff12;border:1px solid #ffffff20;border-radius:26px;padding:28px;backdrop-filter:blur(14px);box-shadow:0 24px 70px #0007}
+.intro{line-height:1.65;color:#e2e8f0}
+label{display:block;font-weight:700;margin:20px 0 8px}
+input,select{width:100%;padding:15px;border:1px solid #ffffff22;border-radius:13px;background:#0f172acc;color:white;font-size:16px;outline:none}
+option{color:#111827}
+button{width:100%;border:0;border-radius:13px;padding:16px;margin-top:24px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#111827;font-size:17px;font-weight:800;cursor:pointer}
+.small{font-size:12px;line-height:1.5;color:#aeb9ca;margin-top:18px;text-align:center}
+footer{text-align:center;color:#94a3b8;font-size:12px;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="logo">PL</div>
+    <h1>Princess Leona</h1>
+    <p class="subtitle">A special place for my amazing fans ✨</p>
+  </div>
+
+  <div class="card">
+    <p class="intro">
+      Welcome! Thank you for being part of my journey. 💛
+      Choose what you'd like to ask about below, then continue to Telegram
+      to start a conversation.
+    </p>
+
+    <form id="fanForm">
+      <label for="name">Your name</label>
+      <input id="name" required placeholder="Enter your name">
+
+      <label for="interest">What would you like to ask about?</label>
+      <select id="interest" required>
+        <option value="">Choose one</option>
+        <option>Fan gifts and appreciation</option>
+        <option>Fan card information</option>
+        <option>VIP fan information</option>
+        <option>Meeting or visit information</option>
+        <option>General message</option>
+      </select>
+
+      <button type="submit">Continue to Telegram 💬</button>
+      <p style="text-align:center;margin-top:14px;font-size:14px;">If the button does not open Telegram, <a href="https://t.me/Leonor236" target="_blank" rel="noopener">tap here to open @Leonor236 directly</a>.</p>
+    </form>
+
+    <p class="small">
+      For your security, please do not enter passwords, bank details, verification codes,
+      or other sensitive information in this form.
+    </p>
+  </div>
+
+  <footer>PL • Princess Leona</footer>
+</div>
+
+<script>
+document.getElementById("fanForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const interest = document.getElementById("interest").value;
+  const message = `Hello Princess Leona! My name is ${name}. I came from your TikTok page and I'm interested in: ${interest}.`;
+  const telegramUrl = "https://t.me/Leonor236?text=" + encodeURIComponent(message);
+  window.open(telegramUrl, "_blank");
+});
+</script>
+</body>
+</html>
